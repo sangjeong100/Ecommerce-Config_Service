@@ -1,0 +1,9 @@
+encrypt:
+  key: sangjeongkeypassword12345
+  
+  # 암호화 사용법 
+   #api: host:port/encrypt
+   # body : 평문 text
+   #복호화 
+    #api : host:port/decrypt
+    #body : 암호문 text   

@@ -1,0 +1,28 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  #profiles: #native local storage
+  #  active: native 
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+  cloud: 
+    config:
+      server:
+        #native: #native local storage 
+        #  search-locations: files://${user.home}/Desktop/sj/msa_workspace/config
+        git: #git storage
+         # uri: file:///Users/ileaders/Desktop/sj/msa_workspace/config  #로컬 스토리지 파일 
+         uri: https://github.com/sangjeong100/Ecommerce_Cloud-Config.git # remote storage
+
+# actuator 기능 사용을 위한 설정 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, httptrace, busrefresh
